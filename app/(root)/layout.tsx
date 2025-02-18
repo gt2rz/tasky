@@ -1,20 +1,7 @@
-import type { Metadata } from "next";
+import React, { ReactNode } from "react";
 
-export const metadata: Metadata = {
-  title: "Tasky Manager",
-  description: "Tasks manager app",
+const layout = ({ children }: { children: ReactNode }) => {
+  return <main className="w-full min-h-screen flex flex-col">{children}</main>;
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-  return (
-    <html lang="en">
-      <body>
-        {children}
-      </body>
-    </html>
-  );
-}
+export default layout;
