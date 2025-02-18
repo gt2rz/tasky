@@ -1,10 +1,15 @@
 import type { Metadata } from "next";
-import { Sigmar } from "next/font/google";
+import { Roboto, Sigmar } from "next/font/google";
 import "./globals.css";
 
 const sigmarFont = Sigmar({
   display: "swap",
   weight: ["400"],
+});
+
+const robotoFont = Roboto({
+  display: "swap",
+  weight: ["400", "500"],
 });
 
 export const metadata: Metadata = {
@@ -19,7 +24,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${sigmarFont.className} antialiased`}>
+      <body
+        className={`${sigmarFont.className} ${robotoFont.className} antialiased`}
+      >
         {children}
       </body>
     </html>
