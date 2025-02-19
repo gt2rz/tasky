@@ -6,7 +6,7 @@ const AuthLayout = ({ children }: { children: ReactNode }) => {
       <section className="w-full h-full flex items-center justify-center">
         {children}
       </section>
-      <section className="w-full h-full flex items-center justify-center bg-zinc-900">
+      <section className="w-full h-full items-center justify-center hidden md:flex bg-zinc-900">
         {/* Here image */}
       </section>
     </main>
