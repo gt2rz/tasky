@@ -18,7 +18,9 @@ const LoginForm = () => {
     resolver: zodResolver(loginSchema),
   });
 
-  const loginHandler: SubmitHandler<LoginFormProps> = async (data: LoginFormProps) => {
+  const loginHandler: SubmitHandler<LoginFormProps> = async (
+    data: LoginFormProps
+  ) => {
     console.log(data);
   };
 
@@ -35,7 +37,7 @@ const LoginForm = () => {
               autoComplete="off"
               placeholder="you@site.com"
               {...register("email")}
-              className="ps-11 py-3 px-4 block w-full rounded-lg text-sm focus:border-blue-500 text-zinc-500 bg-gray-800"
+              className="ps-11 py-3 px-4 block w-full rounded-lg text-sm focus:border-primary focus:ring-primary text-zinc-500 bg-gray-800"
             />
             <div className="absolute inset-y-0 flex items-center pl-3 pointer-events-none">
               <svg
@@ -66,7 +68,7 @@ const LoginForm = () => {
               autoComplete="off"
               placeholder="password"
               {...register("password")}
-              className="ps-11 py-3 px-4 block w-full rounded-lg text-sm focus:border-blue-500 text-zinc-500 bg-gray-800 "
+              className="ps-11 py-3 px-4 block w-full rounded-lg text-sm focus:border-primary text-zinc-500 bg-gray-800 "
             />
             <div className="absolute inset-y-0 flex items-center pl-3 pointer-events-none">
               <svg
@@ -92,7 +94,7 @@ const LoginForm = () => {
         </div>
         <button
           type="submit"
-          className="py-3 px-4 block w-full rounded-lg text-sm bg-blue-500 text-white"
+          className="py-3 px-4 block w-full rounded-lg text-sm bg-primary text-white"
         >
           Acceder
         </button>
