@@ -10,6 +10,12 @@ const Login = () => {
         Welcome back to tasky!
       </h6>
       <LoginForm />
+      <small>
+        Don't have an account?{" "}
+        <a href="/register" className="text-primary">
+          Register
+        </a>
+      </small>
     </section>
   );
 };
