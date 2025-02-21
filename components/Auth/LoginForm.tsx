@@ -37,7 +37,7 @@ const LoginForm = () => {
               autoComplete="off"
               placeholder="you@site.com"
               {...register("email")}
-              className="ps-11 py-3 px-4 block w-full rounded-lg text-sm focus:border-primary focus:ring-primary text-zinc-500 bg-gray-800"
+              className="form-input ps-11"
             />
             <div className="absolute inset-y-0 flex items-center pl-3 pointer-events-none">
               <svg
@@ -68,7 +68,7 @@ const LoginForm = () => {
               autoComplete="off"
               placeholder="password"
               {...register("password")}
-              className="ps-11 py-3 px-4 block w-full rounded-lg text-sm focus:border-primary text-zinc-500 bg-gray-800 "
+              className="form-input ps-11"
             />
             <div className="absolute inset-y-0 flex items-center pl-3 pointer-events-none">
               <svg
