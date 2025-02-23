@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Roboto, Sigmar } from "next/font/google";
+import { Sigmar, Azeret_Mono } from "next/font/google";
 import "./globals.css";
 
 const sigmarFont = Sigmar({
@@ -7,9 +7,9 @@ const sigmarFont = Sigmar({
   weight: ["400"],
 });
 
-const robotoFont = Roboto({
+const azeretMonoFont = Azeret_Mono({
   display: "swap",
-  weight: ["400", "500"],
+  weight: ["100","400", "700", "900"],
 });
 
 export const metadata: Metadata = {
@@ -25,7 +25,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${sigmarFont.className} ${robotoFont.className} antialiased`}
+        className={`${sigmarFont.className} ${azeretMonoFont.className} antialiased`}
       >
         {children}
       </body>

@@ -11,6 +11,7 @@ export default {
       fontFamily: {
         'roboto': ["Roboto", "sans"],
         'sigmar': ["Sigmar", "sans-serif"],
+        'azeret-mono': ["Azeret Mono", "monospace"],
       },
       colors: {
         background: "var(--background)",

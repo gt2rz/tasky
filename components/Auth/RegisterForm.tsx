@@ -32,7 +32,7 @@ const RegisterForm = () => {
         )}
         className="flex flex-col space-y-4"
       >
-        <div className="flex justify-between">
+        <div className="flex justify-between gap-2">
           <div>
             <div className="relative">
               <input
@@ -40,11 +40,13 @@ const RegisterForm = () => {
                 autoComplete="off"
                 placeholder="Your firtsname"
                 {...register("firstname")}
-                className="form-input"
+                className="auth--form-input"
               />
             </div>
             {errors.firstname?.message && (
-              <small className="text-red-500">{errors.firstname.message}</small>
+              <small className="text-input_error">
+                {errors.firstname.message}
+              </small>
             )}
           </div>
 
@@ -55,11 +57,13 @@ const RegisterForm = () => {
                 autoComplete="off"
                 placeholder="Your lastname"
                 {...register("lastname")}
-                className="form-input"
+                className="auth--form-input"
               />
             </div>
             {errors.lastname?.message && (
-              <small className="text-red-500">{errors.lastname.message}</small>
+              <small className="auth--form-input_error">
+                {errors.lastname.message}
+              </small>
             )}
           </div>
         </div>
@@ -71,7 +75,7 @@ const RegisterForm = () => {
               autoComplete="off"
               placeholder="Your email"
               {...register("email")}
-              className="form-input"
+              className="auth--form-input"
             />
           </div>
           {errors.email?.message && (
@@ -86,18 +90,15 @@ const RegisterForm = () => {
               autoComplete="off"
               placeholder="Your password"
               {...register("password")}
-              className="form-input"
+              className="auth--form-input"
             />
           </div>
           {errors.password?.message && (
             <small className="text-red-500">{errors.password.message}</small>
           )}
         </div>
-        <button
-          type="submit"
-          className="py-3 px-4 block w-full rounded-lg text-sm bg-primary text-white"
-        >
-          Register
+        <button type="submit" className="auth--button">
+          Create
         </button>
       </form>
     </section>

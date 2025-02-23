@@ -37,7 +37,7 @@ const LoginForm = () => {
               autoComplete="off"
               placeholder="you@site.com"
               {...register("email")}
-              className="form-input ps-11"
+              className="auth--form-input ps-11"
             />
             <div className="absolute inset-y-0 flex items-center pl-3 pointer-events-none">
               <svg
@@ -68,7 +68,7 @@ const LoginForm = () => {
               autoComplete="off"
               placeholder="password"
               {...register("password")}
-              className="form-input ps-11"
+              className="auth--form-input ps-11"
             />
             <div className="absolute inset-y-0 flex items-center pl-3 pointer-events-none">
               <svg
