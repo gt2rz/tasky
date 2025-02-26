@@ -68,7 +68,7 @@ const LoginForm = () => {
               autoComplete="off"
               placeholder="password"
               {...register("password")}
-              className="auth--form-input ps-11"
+              className="ps-11"
             />
             <div className="absolute inset-y-0 flex items-center pl-3 pointer-events-none">
               <svg
@@ -92,10 +92,7 @@ const LoginForm = () => {
             <small className="text-red-500">{errors.password.message}</small>
           )}
         </div>
-        <button
-          type="submit"
-          className="py-3 px-4 block w-full rounded-lg text-sm bg-primary text-white"
-        >
+        <button type="submit" className="btn-primary" aria-label="Acceder">
           Acceder
         </button>
       </form>

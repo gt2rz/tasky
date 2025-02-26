@@ -1,52 +1,62 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-:root {
-  --background: #E5E5E5;
-  --foreground: #101010;
-
-  --black: #000000;
-  --white: #FFFFFF;
-  --light-gray: #E5E5E5;
-  --gray: #14213D;
-  --orange: #e49310;
-}
+@import "tailwindcss";
 
 @media (prefers-color-scheme: dark) {
-  :root {
+  @theme {
     --background: #101010;
     --foreground: #ededed;
+    --color-input: #1a1a1a;
   }
 }
 
+@media (prefers-color-scheme: light) {
+  @theme { 
+    --font-azaret-mono: 'Azeret Mono', monospace;
+    --font-sigmar: 'Sigmar', 'sans-serif';
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    --color-primary: #e49310;
+    --color-primary-hover: #e49310ad;
+
+    --color-secondary: #6d6d6d;
+    --color-secondary-hover: #6d6d6dad;
+
+    --color-placeholder: #b3b3b3;
+
+    --background: #f9f9f9;
+    --foreground: #101010;
+    --color-input: #f9f9f9;
+  }
 }
 
-@layer base{
+@layer base {
   body {
-    @apply font-azeret-mono
-  }
+    font-family: var(--font-sigmar);
+    background-color: var(--background);
+  };
 }
 
 @layer components {
-
-  /* Auth Form */
-  .auth--button {
-    @apply py-3 px-4 block w-full rounded-lg text-sm bg-primary text-white font-bold cursor-pointer;
+  .typography {
+    @apply text-zinc-300 font-azaret-mono;
   }
 
-  .auth--button:hover {
-    @apply bg-primary;
+  input {
+    @apply py-3 px-4 block w-full rounded-lg text-sm text-zinc-300 bg-gray-800 placeholder-gray-500 font-light;
   }
 
-  .auth--form-input {
-    @apply py-3 px-4 block w-full rounded-lg text-sm focus:border-primary text-zinc-300 bg-gray-800 placeholder-gray-500 font-light;
+  button{
+    @apply py-3 px-4 block w-full rounded-lg text-sm font-bold cursor-pointer;
+  }
+
+  button.btn-primary {
+    @apply py-3 px-4 block w-full rounded-lg text-sm bg-primary hover:bg-primary-hover text-white font-bold cursor-pointer;
+  }
+
+  button.btn-secondary {
+    @apply py-3 px-4 block w-full rounded-lg text-sm bg-secondary hover:bg-secondary-hover text-white font-bold cursor-pointer;
+  }
+
+  a {
+    @apply text-primary hover:text-primary-hover cursor-pointer font-bold hover:underline hover:underline-offset-4;
   }
 
   .auth--form-input_error{
