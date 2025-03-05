@@ -16,12 +16,11 @@ const RegisterForm = () => {
                 type="text"
                 autoComplete="off"
                 placeholder="Your firtsname"
-                className="auth--form-input"
               />
             </div>
             {state?.errors?.firstname &&
               state?.errors?.firstname.map((error) => (
-                <small className="text-input_error">{error}</small>
+                <small className="auth--form-input_error">{error}</small>
               ))}
           </div>
 
@@ -31,28 +30,22 @@ const RegisterForm = () => {
                 type="text"
                 autoComplete="off"
                 placeholder="Your lastname"
-                className="auth--form-input"
               />
             </div>
             {state?.errors?.lastname &&
               state?.errors?.lastname.map((error) => (
-                <small className="text-input_error">{error}</small>
+                <small className="auth--form-input_error">{error}</small>
               ))}
           </div>
         </div>
 
         <div>
           <div className="relative">
-            <input
-              type="email"
-              autoComplete="off"
-              placeholder="Your email"
-              className="auth--form-input"
-            />
+            <input type="email" autoComplete="off" placeholder="Your email" />
           </div>
           {state?.errors?.email &&
             state?.errors?.email.map((error) => (
-              <small className="text-input_error">{error}</small>
+              <small className="auth--form-input_error">{error}</small>
             ))}
         </div>
 
@@ -62,20 +55,17 @@ const RegisterForm = () => {
               type="password"
               autoComplete="off"
               placeholder="Your password"
-              className="auth--form-input"
             />
           </div>
           {state?.errors?.password && (
-            <div>
+            <small className="auth--form-input_error">
               <p>Password must:</p>
               <ul>
                 {state.errors.password.map((error) => (
-                  <li className="text-input_error" key={error}>
-                    - {error}
-                  </li>
+                  <li key={error}>- {error}</li>
                 ))}
               </ul>
-            </div>
+            </small>
           )}
         </div>
         <button type="submit" className="btn-primary" disabled={pending}>
