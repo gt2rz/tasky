@@ -1,4 +1,4 @@
-import RegisterForm from "@/components/Auth/RegisterForm";
+import RegisterForm from "@/app/ui/auth/register-form";
 import Logo from "@/components/Logo";
 import React from "react";
 
