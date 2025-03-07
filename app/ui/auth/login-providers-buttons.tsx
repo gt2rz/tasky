@@ -1,19 +1,20 @@
-import React from "react";
+"use client";
 import { HugeiconsIcon } from "@hugeicons/react";
 import {
   FacebookIcon,
   GithubIcon,
   GoogleIcon,
 } from "@hugeicons/core-free-icons";
-import { signIn } from "@/auth";
+import { login } from "@/app/actions/auth";
+// import { signIn } from "@/auth";
 
 const LoginProvidersButtons = () => {
-  const handlerSubmit = async (formData: FormData) => {
-    "use server";
-    const formDataJson = Object.fromEntries(formData.entries());
-    const provider = Object.keys(formDataJson)[1];
-    await signIn(provider, { redirectTo: "/dashboard" });
-  };
+  // const handlerSubmit = async (formData: FormData) => {
+  //   "use server";
+  //   const formDataJson = Object.fromEntries(formData.entries());
+  //   const provider = Object.keys(formDataJson)[1];
+  //   await signIn(provider, { redirectTo: "/dashboard" });
+  // };
 
   return (
     <>
@@ -21,7 +22,7 @@ const LoginProvidersButtons = () => {
       <p className="flex w-full justify-center text-gray-400">
         Or continue with
       </p>
-      <form className="flex justify-center space-x-2" action={handlerSubmit}>
+      {/* <form className="flex justify-center space-x-2" action={handlerSubmit}>
         <button
           disabled
           data-provider="google"
@@ -42,7 +43,18 @@ const LoginProvidersButtons = () => {
           <HugeiconsIcon icon={GithubIcon} className="w-6 h-6" />
           Github
         </button>
-      </form>
+      </form> */}
+
+      <button
+        name="github"
+        type="submit"
+        className="btn-secondary-outline text-center justify-center flex gap-2 items-center"
+        aria-label="Continue with Github"
+        onClick={() => login("github")}
+      >
+        <HugeiconsIcon icon={GithubIcon} className="w-6 h-6" />
+        Github
+      </button>
     </>
   );
 };

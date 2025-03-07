@@ -1,5 +1,8 @@
+"use server";
+
+
 import { RegisterFormSchema, RegisterFormState} from '@/app/lib/auth.definitions'
-import { signIn } from '@/auth'
+import { signIn, signOut } from '@/auth'
 import bcrypt from 'bcrypt'
 
 export async function signup(state: RegisterFormState, formData: FormData) {
@@ -37,6 +40,12 @@ export async function signup(state: RegisterFormState, formData: FormData) {
   }
 }
 
-export async function signInProvider(provider: string) {
-  await signIn(provider);
+export async function login(provider?: string) {
+  if(provider) {
+    return await signIn(provider, { redirectTo: '/dashboard' });
+  }
+}
+
+export const logout = async () => {
+  await signOut({ redirectTo: '/' });
 }
