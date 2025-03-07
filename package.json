@@ -10,6 +10,9 @@
   },
   "dependencies": {
     "@hookform/resolvers": "^4.1.0",
+    "@hugeicons/core-free-icons": "^1.0.11",
+    "@hugeicons/react": "^1.0.4",
+    "bcrypt": "^5.1.1",
     "next": "15.1.7",
     "next-auth": "^5.0.0-beta.25",
     "react": "^19.0.0",
@@ -20,6 +23,7 @@
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4.0.8",
+    "@types/bcrypt": "^5.0.2",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",

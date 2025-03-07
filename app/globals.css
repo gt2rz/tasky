@@ -7,10 +7,10 @@
   --font-sigmar: "Sigmar", "sans-serif";
   --color-primary: #e49310;
   --color-primary-hover: #e49310ad;
-  
+
   --color-secondary: #6d6d6d;
   --color-secondary-hover: #6d6d6dad;
-  
+
   --color-placeholder: #b3b3b3;
   --color-input: #f9f9f9;
 }
@@ -50,6 +50,13 @@ body {
 
   button.btn-secondary {
     @apply py-3 px-4 block w-full rounded-lg text-sm bg-secondary hover:bg-secondary-hover text-white font-bold cursor-pointer;
+  }
+  button.btn-secondary-outline {
+    @apply py-3 px-4 block w-full rounded-lg text-sm bg-transparent border border-secondary text-secondary hover:bg-secondary-hover hover:text-white font-bold cursor-pointer;
+  }
+
+  button.btn-secondary-outline:disabled {
+    @apply bg-transparent border border-secondary text-secondary cursor-not-allowed opacity-50;
   }
 
   a {

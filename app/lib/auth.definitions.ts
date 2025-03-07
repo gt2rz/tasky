@@ -1,22 +1,16 @@
 import { z } from 'zod';
 
 export const LoginFormSchema = z.object({
-  email: z
-  .string()
-  .trim(),
-  password: z
-  .string()
-  .trim(),
+  email: z.string().trim(),
+  password: z.string().trim(),
 });
 
 export const RegisterFormSchema = z.object({
-  email: z
-  .string()
+  email: z.string()
   .email({message: "Invalid email"})
   .min(1, {message: "Email is required"})
   .trim(),
-  password: z
-  .string()
+  password: z.string()
   .min(8, {message: "Password must be at least 6 characters long"})
   .regex(/[a-zA-Z]/, { message: 'Contain at least one letter.' })
   .regex(/[0-9]/, { message: 'Contain at least one number.' })
@@ -24,12 +18,10 @@ export const RegisterFormSchema = z.object({
     message: 'Contain at least one special character.',
   })
   .trim(),
-  firstname: z
-  .string()
-  .min(1, {message: "Firstname is required"})
+  firstname: z.string()
+  .nonempty({message: "Firstname is required"})
   .trim(),
-  lastname: z
-  .string()
+  lastname: z.string()
   .min(1, {message: "Lastname is required"})
   .trim(),
 });
