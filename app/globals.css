@@ -76,4 +76,16 @@ body {
   .auth--form-input_error {
     @apply text-red-300;
   }
+
+  #nav-menu-header a {
+    @apply text-gray-400 font-normal;
+  }
+
+  #nav-menu-header a.active {
+    @apply text-white underline underline-offset-4 font-bold;
+  }
+
+  #nav-options-header li {
+    @apply text-gray-400 font-normal cursor-pointer hover:text-white;
+  }
 }
