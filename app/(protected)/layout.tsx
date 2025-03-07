@@ -18,14 +18,14 @@ const PrivateLayout = ({ children }: { children: ReactNode }) => {
         <div className="flex flex-1 gap-4 items-center">
           <Logo />
           <nav className="flex flex-1 justify-between">
-            <ul className="flex gap-4">
+            <ul className="flex gap-4 items-center">
               <li>Start</li>
               <li>Projects</li>
               <li>Planning</li>
               <li>Calendar</li>
               <li>Team</li>
             </ul>
-            <ul className="flex gap-4">
+            <ul className="flex gap-4 items-center">
               <li>
                 <HugeiconsIcon icon={Search01Icon} />
               </li>
@@ -41,7 +41,12 @@ const PrivateLayout = ({ children }: { children: ReactNode }) => {
               <li>
                 <HugeiconsIcon icon={Notification03Icon} />
               </li>
-              <li>Logout</li>
+              <li className="relative flex items-center">
+                <img
+                  className="rounded-full ring ring-white w-8 h-8"
+                  src="https://images.unsplash.com/photo-1491528323818-fdd1faba62cc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                />
+              </li>
             </ul>
           </nav>
         </div>
