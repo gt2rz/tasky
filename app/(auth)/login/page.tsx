@@ -1,4 +1,5 @@
 import LoginForm from "@/app/ui/auth/login-form";
+import LoginProvidersButtons from "@/app/ui/auth/login-providers-buttons";
 
 const Login = () => {
   return (
@@ -8,13 +9,14 @@ const Login = () => {
         Welcome back to tasky!
       </h6>
       <LoginForm />
-      <br />
       <small>
         Don't have an account?{" "}
         <a href="/register" className="text-primary">
           Register
         </a>
       </small>
+      <br />
+      <LoginProvidersButtons />
     </section>
   );
 };

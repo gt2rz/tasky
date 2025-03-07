@@ -5,7 +5,6 @@ import {
   GithubIcon,
   GoogleIcon,
 } from "@hugeicons/core-free-icons";
-import ProviderButton from "./provider-button";
 import { signIn } from "@/auth";
 
 const LoginProvidersButtons = () => {
