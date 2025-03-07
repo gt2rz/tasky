@@ -10,6 +10,7 @@ import {
   Search01Icon,
   Setting06Icon,
 } from "@hugeicons/core-free-icons";
+import Link from "next/link";
 
 const PrivateLayout = ({ children }: { children: ReactNode }) => {
   return (
@@ -19,11 +20,21 @@ const PrivateLayout = ({ children }: { children: ReactNode }) => {
           <Logo />
           <nav className="flex flex-1 justify-between">
             <ul className="flex gap-4 items-center">
-              <li>Start</li>
-              <li>Projects</li>
-              <li>Planning</li>
-              <li>Calendar</li>
-              <li>Team</li>
+              <li>
+                <Link href="/dashboard">Start</Link>
+              </li>
+              <li>
+                <Link href="/projects">Projects</Link>
+              </li>
+              <li>
+                <Link href="/planning">Planning</Link>
+              </li>
+              <li>
+                <Link href="/calendar">Calendar</Link>
+              </li>
+              <li>
+                <Link href="/team">Team</Link>
+              </li>
             </ul>
             <ul className="flex gap-4 items-center">
               <li>
