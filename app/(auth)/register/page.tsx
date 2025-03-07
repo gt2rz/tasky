@@ -1,5 +1,5 @@
 import RegisterForm from "@/app/ui/auth/register-form";
-import Logo from "@/components/Logo";
+import Logo from "@/app/components/Logo";
 import React from "react";
 
 const Login = () => {
