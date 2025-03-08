@@ -44,12 +44,10 @@ export default function TasksPool({ pool, projectId }: TaskPoolProps) {
   }, []);
 
   return (
-    <section className="w-[400px] h-fit bg-slate-100 p-2">
-      <header className="flex justify-between items-center">
-        <h6 className="font-bold text-gray-800">{pool.title}</h6>
-        <button className="px-4 py-2 bg-gray-50 text-black rounded-lg border">
-          +
-        </button>
+    <section className="min-w-[400px] h-fit bg-background-900 p-2">
+      <header className="flex flex-1 justify-between items-center">
+        <h6 className="font-bold text-foreground-normal">{pool.title}</h6>
+        <button className="btn-secondary max-w-[4rem]">+</button>
       </header>
 
       <div id={poolId} className="mt-4">
@@ -59,9 +57,7 @@ export default function TasksPool({ pool, projectId }: TaskPoolProps) {
       </div>
 
       <footer>
-        <button className="w-full bg-gray-50 text-black text-sm py-2 mt-4 rounded-lg">
-          Add Task
-        </button>
+        <button className="btn-secondary mt-4">Add Task</button>
       </footer>
     </section>
   );

@@ -6,22 +6,27 @@ import TaskCardTags from "./TaskCardTags";
 import { TaskType } from "@/types/tasks";
 
 export default function TaskCard({ task }: { task: TaskType }) {
-    return (
-        <div id={`task-${task.id}`} className="bg-white p-4 rounded-lg mt-2">
-            <TaskCardHeader title={task.title} />
+  return (
+    <div
+      id={`task-${task.id}`}
+      className="bg-background-800 p-4 rounded-lg mt-2 shadow-md"
+    >
+      <TaskCardHeader title={task.title} />
 
-            <p className="text-gray-500">
-                {task.description.length > 200 ? `${task.description.slice(0, 200)}...` : task.description}
-            </p>
+      <p className="text-gray-500">
+        {task.description.length > 200
+          ? `${task.description.slice(0, 200)}...`
+          : task.description}
+      </p>
 
-            <TaskCardTags tags={task.tags} />
+      <TaskCardTags tags={task.tags} />
 
-            <TaskCardComments comments={task.comments} />
+      <TaskCardComments comments={task.comments} />
 
-            <div className="flex justify-between items-center mt-2">
-                <TaskCardProgress progress={task.progress} />
-                <TaskCardEstimations estimations={task.estimations} />
-            </div>
-        </div>
-    );
+      <div className="flex justify-between items-center mt-2">
+        <TaskCardProgress progress={task.progress} />
+        <TaskCardEstimations estimations={task.estimations} />
+      </div>
+    </div>
+  );
 }
