@@ -1,9 +1,11 @@
 "use client";
+import Avatar from "../avatar";
 import MenuUserOptions from "./menu-user-options";
 
 export interface MenuUserProps {
   image?: string;
   name?: string;
+  email?: string;
 }
 
 const MenuUser = ({ user }: { user: MenuUserProps }) => {
@@ -11,10 +13,7 @@ const MenuUser = ({ user }: { user: MenuUserProps }) => {
     <div className="flex items-center gap-1">
       {user?.image && (
         <>
-          <img
-            className="rounded-full ring ring-black w-8 h-8"
-            src={user.image}
-          />
+          <Avatar image={user.image} />
           <MenuUserOptions user={user} />
         </>
       )}

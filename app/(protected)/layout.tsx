@@ -17,14 +17,14 @@ const ProtectedLayout = async ({ children }: { children: ReactNode }) => {
             <NavMenuHeader />
             <NavOptionsHeader />
           </div>
-          <MenuUser user={session?.user}/>
+          <MenuUser user={session?.user} />
         </div>
       </header>
       <div className="flex flex-1 flex-col sm:flex-row">
         <main className="flex-1 bg-black">{children}</main>
         {/* <nav className="order-first sm:w-32 bg-background-800">Sidebar</nav> */}
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };
