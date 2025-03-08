@@ -4,7 +4,7 @@ import { useState } from "react";
 import Logo from "../commons/logo";
 import HamburguerSVG from "../commons/hamburguer-svg";
 
-export default function Navbar() {
+export default function Navbar({ ...props }) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const toggleMobileMenu = () => {
@@ -18,12 +18,11 @@ export default function Navbar() {
     { name: "Pricing", link: "#pricing" },
     { name: "Testimonials", link: "#testimonials" },
     { name: "Blog", link: "#blog" },
-    { name: "About", link: "#about" },
     { name: "Contact", link: "#contact" },
   ];
 
   return (
-    <div>
+    <div {...props}>
       <nav className="block w-full max-w-screen px-4 py-4 mx-auto dark:bg-black bg-white bg-opacity-90 sticky top-3 shadow lg:px-8 backdrop-blur-lg backdrop-saturate-150 z-[9999]">
         <div className="container flex flex-wrap items-center justify-between mx-auto text-slate-800 dark:text-slate-500">
           <Link href="/" className="mr-4 block cursor-pointer py-1.5">
@@ -84,7 +83,14 @@ export default function Navbar() {
                 </li>
               ))}
               <li className="mt-4">
-                <button className="btn-primary w-full">Login</button>
+                <button
+                  className="btn-primary w-full"
+                  onClick={() => {
+                    window.location.href = "/login";
+                  }}
+                >
+                  Login
+                </button>
               </li>
             </ul>
           </div>
@@ -106,7 +112,14 @@ export default function Navbar() {
                 </li>
               ))}
               <li>
-                <button className="btn-primary">Login</button>
+                <button
+                  className="btn-primary"
+                  onClick={() => {
+                    window.location.href = "/login";
+                  }}
+                >
+                  Login
+                </button>
               </li>
             </ul>
           </div>
