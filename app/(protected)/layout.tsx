@@ -3,10 +3,11 @@ import Logo from "@/app/components/Logo";
 import NavMenuHeader from "../components/layout/nav-header-menu";
 import NavOptionsHeader from "../components/layout/nav-header-options";
 import Footer from "../components/layout/footer";
-import { HugeiconsIcon } from "@hugeicons/react";
-import { ArrowDown01Icon } from "@hugeicons/core-free-icons";
+import MenuUser from "../components/layout/menu-user";
+import { auth } from "@/auth";
 
-const ProtectedLayout = ({ children }: { children: ReactNode }) => {
+const ProtectedLayout = async ({ children }: { children: ReactNode }) => {
+  const session = await auth();
   return (
     <div className="w-full min-h-screen flex flex-col">
       <header className="fixed top-0 bg-background-900 w-full p-4">
@@ -16,16 +17,7 @@ const ProtectedLayout = ({ children }: { children: ReactNode }) => {
             <NavMenuHeader />
             <NavOptionsHeader />
           </div>
-
-          <div className="flex items-center gap-1">
-            <img
-              className="rounded-full ring ring-black w-8 h-8"
-              src="https://images.unsplash.com/photo-1491528323818-fdd1faba62cc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-            />
-            <span className="text-gray-400 hover:text-white cursor-pointer">
-              <HugeiconsIcon icon={ArrowDown01Icon} />
-            </span>
-          </div>
+          <MenuUser user={session?.user}/>
         </div>
       </header>
       <div className="flex flex-1 flex-col sm:flex-row">
