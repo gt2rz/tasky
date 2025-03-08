@@ -4,7 +4,7 @@ import { MenuUserProps } from "./menu-user";
 import { HugeiconsIcon } from "@hugeicons/react";
 import { ArrowDown01Icon, ArrowUp01Icon } from "@hugeicons/core-free-icons";
 import { logout } from "@/app/actions/auth";
-import Avatar from "../avatar";
+import Avatar from "../commons/avatar";
 
 const MenuUserOptions = ({ user }: { user: MenuUserProps }) => {
   const [isOpen, setIsOpen] = useState(false);

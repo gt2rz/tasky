@@ -1,5 +1,5 @@
 "use client";
-import Avatar from "../avatar";
+import Avatar from "../commons/avatar";
 import MenuUserOptions from "./menu-user-options";
 
 export interface MenuUserProps {
@@ -8,7 +8,7 @@ export interface MenuUserProps {
   email?: string;
 }
 
-const MenuUser = ({ user }: { user: MenuUserProps }) => {
+const MenuUser = ({ user }: { user: MenuUserProps | undefined }) => {
   return (
     <div className="flex items-center gap-1">
       {user?.image && (

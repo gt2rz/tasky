@@ -1,4 +1,4 @@
-import Logo from "@/app/components/Logo";
+import Logo from "@/app/components/commons/logo";
 import Image from "next/image";
 import { ReactNode } from "react";
 

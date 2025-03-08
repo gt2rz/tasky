@@ -1,4 +1,4 @@
-import Logo from "@/app/components/Logo";
+import Logo from "@/app/components/commons/logo";
 import Link from "next/link";
 
 export default function Home() {
