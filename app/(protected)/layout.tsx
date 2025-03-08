@@ -9,7 +9,7 @@ import { auth } from "@/auth";
 const ProtectedLayout = async ({ children }: { children: ReactNode }) => {
   const session = await auth();
   return (
-    <div className="w-full min-h-screen flex flex-col">
+    <div className="  min-h-screen flex flex-col">
       <header className="fixed top-0 bg-background-900 w-full p-4 z-50">
         <div className="gap-12 items-center hidden sm:flex sm:flex-1">
           <Logo />
@@ -21,8 +21,10 @@ const ProtectedLayout = async ({ children }: { children: ReactNode }) => {
           <MenuUser user={session?.user} />
         </div>
       </header>
-      <div className="flex flex-1 sm:flex-row w-full min-h-screen pt-18">
-        <main className="flex flex-1 bg-black px-12">{children}</main>
+      <div className="flex flex-1 sm:flex-row w-full min-h-screen pt-18  ">
+        <main className="flex flex-1 bg-black px-12 max-w-screen mx-auto overflow-hidden">
+          {children}
+        </main>
         {/* <nav className="order-first sm:w-32 bg-background-800">Sidebar</nav> */}
       </div>
       {/* <Footer /> */}

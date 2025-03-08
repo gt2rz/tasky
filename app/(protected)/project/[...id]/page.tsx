@@ -4,7 +4,7 @@ import ProjectContent from "@/app/components/projects/ProjectContent";
 const ProjectPage = async ({ params }: { params: Promise<{ id: string }> }) => {
   const { id } = await params;
   return (
-    <div className="w-full h-screen flex flex-col relative">
+    <div className="h-screen flex flex-col relative w-full">
       <HeaderPage
         title="Tasks Board"
         id="projects--header-page"
