@@ -3,7 +3,6 @@ import Link from "next/link";
 import { useState } from "react";
 import Logo from "../commons/logo";
 import HamburguerSVG from "../commons/hamburguer-svg";
-import { routes } from "@/app/constants/routes-header-menu";
 
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
