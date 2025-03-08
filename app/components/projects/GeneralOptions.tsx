@@ -31,9 +31,9 @@ export default function GeneralOptions() {
           </li>
         ))}
       </ol>
-      <div className="flex items-center space-x-4 mb-2">
+      {/* <div className="flex items-center space-x-4 mb-2">
         <button className="btn-secondary">Filters</button>
-      </div>
+      </div> */}
     </section>
   );
 }
