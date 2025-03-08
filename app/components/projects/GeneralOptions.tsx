@@ -10,7 +10,7 @@ export default function GeneralOptions() {
   const pathname = usePathname();
   const activeTab = searchParams.get("tab");
 
-  const tabs = [
+  const projectTabs = [
     {
       name: "Overview",
       tab: "overview",
@@ -55,7 +55,7 @@ export default function GeneralOptions() {
   return (
     <section className="w-full h-12 text-gray-500 flex items-center mb-4 border-0 border-b-[1px] border-gray-200 justify-between">
       <ol>
-        {tabs.map((tab, index) => (
+        {projectTabs.map((tab, index) => (
           <li
             key={index}
             className={`inline-block px-4 py-2 cursor-pointer ${tab.tab === activeTab ? "text-white font-bold border-0 border-b-4 border-primary" : ""}`}
