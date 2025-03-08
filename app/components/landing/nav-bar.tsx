@@ -14,8 +14,11 @@ export default function Navbar() {
   // Navigation items array
   const navItems = [
     { name: "Home", link: "/" },
+    { name: "Features", link: "#features" },
+    { name: "Pricing", link: "#pricing" },
+    { name: "Testimonials", link: "#testimonials" },
+    { name: "Blog", link: "#blog" },
     { name: "About", link: "#about" },
-    { name: "News", link: "#news" },
     { name: "Contact", link: "#contact" },
   ];
 
