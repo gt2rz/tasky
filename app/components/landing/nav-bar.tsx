@@ -3,13 +3,16 @@ import Link from "next/link";
 import { useState } from "react";
 import Logo from "../commons/logo";
 import HamburguerSVG from "../commons/hamburguer-svg";
+import { Session } from "next-auth";
 
-export default function Navbar({ ...props }) {
+const Navbar = async ({ session, ...props }: { session: Session | null }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
+
+  const isLogged = session?.user ? true : false;
 
   // Navigation items array
   const navItems = [
@@ -22,7 +25,7 @@ export default function Navbar({ ...props }) {
   ];
 
   return (
-    <div {...props}>
+    <div className="sticky top-0 z-50">
       <nav className="block w-full max-w-screen px-4 py-4 mx-auto dark:bg-black bg-white bg-opacity-90 sticky top-3 shadow lg:px-8 backdrop-blur-lg backdrop-saturate-150 z-[9999]">
         <div className="container flex flex-wrap items-center justify-between mx-auto text-slate-800 dark:text-slate-500">
           <Link href="/" className="mr-4 block cursor-pointer py-1.5">
@@ -83,14 +86,25 @@ export default function Navbar({ ...props }) {
                 </li>
               ))}
               <li className="mt-4">
-                <button
-                  className="btn-primary w-full"
-                  onClick={() => {
-                    window.location.href = "/login";
-                  }}
-                >
-                  Login
-                </button>
+                {!isLogged ? (
+                  <button
+                    className="btn-primary w-full"
+                    onClick={() => {
+                      window.location.href = "/login";
+                    }}
+                  >
+                    Login
+                  </button>
+                ) : (
+                  <button
+                    className="btn-secondary w-full"
+                    onClick={() => {
+                      window.location.href = "/dashboard";
+                    }}
+                  >
+                    Dashboard
+                  </button>
+                )}
               </li>
             </ul>
           </div>
@@ -112,14 +126,25 @@ export default function Navbar({ ...props }) {
                 </li>
               ))}
               <li>
-                <button
-                  className="btn-primary"
-                  onClick={() => {
-                    window.location.href = "/login";
-                  }}
-                >
-                  Login
-                </button>
+                {!isLogged ? (
+                  <button
+                    className="btn-primary w-full"
+                    onClick={() => {
+                      window.location.href = "/login";
+                    }}
+                  >
+                    Login
+                  </button>
+                ) : (
+                  <button
+                    className="btn-secondary w-full"
+                    onClick={() => {
+                      window.location.href = "/dashboard";
+                    }}
+                  >
+                    Dashboard
+                  </button>
+                )}
               </li>
             </ul>
           </div>
@@ -127,4 +152,6 @@ export default function Navbar({ ...props }) {
       </nav>
     </div>
   );
-}
+};
+
+export default Navbar;

@@ -1,10 +1,13 @@
 import React, { ReactNode } from "react";
 import Navbar from "../components/landing/nav-bar";
+import { auth } from "@/auth";
 
-const LandingLayout = ({ children }: { children: ReactNode }) => {
+const LandingLayout = async ({ children }: { children: ReactNode }) => {
+  const session = await auth();
+
   return (
     <main className="w-full min-h-screen flex flex-col">
-      <Navbar className="sticky top-0 z-50" />
+      <Navbar  session={session} />
       {children}
     </main>
   );
